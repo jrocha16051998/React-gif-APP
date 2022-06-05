@@ -1,7 +1,6 @@
 import React from 'react'
-
-import { GifGridItem } from './GifGridItem'
 import { useFetchGifs } from '../hooks/useFetchGifs'
+import { GifGridItem } from './GifGridItem'
 
 
 export const GifGrid = ({category}) => {
@@ -12,24 +11,24 @@ export const GifGrid = ({category}) => {
 
   return (
     <>
-    <h3 className='card animate__animated animate__bounceInLeft'>{ category }</h3>
-    <div  className='card-grid'>
+      <h3 className='card animate__animated animate__bounceInLeft'>{ category }</h3>
+      <div  className='card-grid'>
           
           {loading && <p>cargando</p>}
        
            {
                images.map(img =>{
-                 return  <GifGridItem 
-                             key={img.id}
-                              {...img}/>
+                 return  (<GifGridItem 
+                             key={ img.id }
+                              {...img}/>)
                })
            }
       
-    </div>
+      </div>
     </> 
   )
 }
 
 
 
-export default GifGrid
+//export default GifGrid 
